@@ -1,0 +1,8 @@
+Elven Helmet:
+https://ipfs.moralis.io:2053/ipfs/QmUEPzw3pkxptNQd7as3JgUhiJPg6ZabQm6dC2y28WhCXN/ElvenHelmet_637905029204254360.json
+
+Carlin Sword:
+https://ipfs.moralis.io:2053/ipfs/QmVUXZ5dRVyKTLeiFVCUpp45iMqw9eTQjnuKWruVVJiGsL/CarlinSword_637905030139390627.json
+
+Iron Ingot:
+https://ipfs.moralis.io:2053/ipfs/QmUydnyXg7AL26jyztuVjGAzVa8sKx9mSwvuii2gm6QRpg/IronIngot_637905030867477762.json 
