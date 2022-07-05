@@ -7,7 +7,6 @@ namespace Web3_Elden_Ring
         [Header("Main Custom Components")]
         public PlayerInputController input;
         public PlayerMovement movement;
-        public PlayerCombatSystem combat;
         public PlayerWalletAddress walletAddress;
         
         [Header("Unity Native Components")]
@@ -17,7 +16,6 @@ namespace Web3_Elden_Ring
         public void Death()
         {
             movement.Deactivate();
-            combat.Deactivate();
             input.EnableInput(false);
             
             animator.SetTrigger("Death");

@@ -66,11 +66,7 @@ namespace Web3_Elden_Ring
 
         [Tooltip("For locking the camera position on all axis")]
         public bool lockCameraPosition = false;
-
         
-        [Header("Combat System")] 
-        [SerializeField] private PlayerCombatSystem playerCombatSystem;
-
 
         // Cinemachine vars
         private float _cinemachineTargetYaw;
@@ -203,9 +199,6 @@ namespace Web3_Elden_Ring
 
         private void Move()
         {
-            if (playerCombatSystem.isAttacking) return;
-            if (playerCombatSystem.isImpacted) return;
-
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _inputController.sprint ? sprintSpeed : moveSpeed;
 
@@ -271,12 +264,6 @@ namespace Web3_Elden_Ring
 
         private void JumpAndGravity()
         {
-            if (playerCombatSystem.isAttacking || playerCombatSystem.isImpacted) // TODO if GameManager state is Combating, don't jump
-            {
-                _inputController.jump = false;
-                return;
-            }
-            
             if (grounded)
             {
                 // reset the fall timeout timer
