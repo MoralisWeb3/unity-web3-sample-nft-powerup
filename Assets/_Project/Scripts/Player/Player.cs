@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Web3_Elden_Ring
@@ -8,10 +9,13 @@ namespace Web3_Elden_Ring
         public PlayerInputController input;
         public PlayerMovement movement;
         public PlayerWalletAddress walletAddress;
-        
+
         [Header("Unity Native Components")]
         public Animator animator;
         public CharacterController characterController;
+
+        [Header("VFX")]
+        public GameObject boostVFX;
 
         public void Death()
         {
@@ -21,9 +25,21 @@ namespace Web3_Elden_Ring
             animator.SetTrigger("Death");
         }
 
-        public void DanceThriller()
+        private void Update()
         {
-            movement.ShowMyMoves();
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                if (movement.boosted)
+                {
+                    movement.ReturnMovementToDefault();
+                    boostVFX.SetActive(false);
+                }
+                else
+                {
+                    movement.BoostMovementByPercentage(25);
+                    boostVFX.SetActive(true);
+                }
+            }
         }
     }
 }

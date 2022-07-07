@@ -22,6 +22,8 @@ namespace Web3_Elden_Ring
         [Tooltip("Acceleration and deceleration")]
         public float speedChangeRate = 10.0f;
 
+        [HideInInspector] public bool boosted;
+
         
         [Header("Player Jump")]
         [Tooltip("The height the player can jump")]
@@ -79,6 +81,11 @@ namespace Web3_Elden_Ring
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+        
+        // Movement init values
+        private float _initMoveSpeed;
+        private float _initSprintSpeed;
+        private float _initJumpHeight;
 
         // Jump animations timeouts
         private float _jumpTimeoutDelta;
@@ -90,7 +97,6 @@ namespace Web3_Elden_Ring
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
-        private int _animIDThriller;
 
         // Components
         private PlayerInput _playerInput;
@@ -154,9 +160,28 @@ namespace Web3_Elden_Ring
             enabled = false;
         }
 
-        public void ShowMyMoves()
+        public void BoostMovementByPercentage(float percentage)
         {
-            _animator.SetBool(_animIDThriller, !_animator.GetCurrentAnimatorStateInfo(0).IsName("Thriller"));
+            // Save initial values
+            _initMoveSpeed = moveSpeed;
+            _initSprintSpeed = sprintSpeed;
+            _initJumpHeight = jumpHeight;
+
+            // Boost movement and jump
+            moveSpeed += moveSpeed / 100 * percentage;
+            sprintSpeed += sprintSpeed / 100 * percentage;
+            jumpHeight += jumpHeight / 100 * percentage;
+
+            boosted = true;
+        }
+        
+        public void ReturnMovementToDefault()
+        {
+            moveSpeed = _initMoveSpeed;
+            sprintSpeed = _initSprintSpeed;
+            jumpHeight = _initJumpHeight;
+
+            boosted = false;
         }
 
         #endregion
@@ -329,7 +354,6 @@ namespace Web3_Elden_Ring
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
-            _animIDThriller = Animator.StringToHash("Thriller");
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
