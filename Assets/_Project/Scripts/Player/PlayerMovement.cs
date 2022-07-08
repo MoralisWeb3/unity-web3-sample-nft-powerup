@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Web3_Elden_Ring
@@ -8,6 +9,8 @@ namespace Web3_Elden_Ring
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerMovement : MonoBehaviour
     {
+        public Action OnMaxFallingTimeReached;
+        
         [Header("Player Movement")]
         [Tooltip("Move speed of the character in m/s")]
         public float moveSpeed = 2.0f;
@@ -37,6 +40,9 @@ namespace Web3_Elden_Ring
 
         [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float fallTimeout = 0.15f;
+        
+        [Tooltip("Maximum time the player can be falling/not grounded")]
+        public float maxFallTime = 5f;
 
         
         [Header("Player Grounded")]
@@ -81,6 +87,8 @@ namespace Web3_Elden_Ring
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+        private float _currentFallTime;
+        private bool _maxFallTimeReached;
         
         // Movement init values
         private float _initMoveSpeed;
@@ -139,6 +147,8 @@ namespace Web3_Elden_Ring
 
         private void Update()
         {
+            if (_maxFallTimeReached) return;
+            
             JumpAndGravity();
             GroundedCheck();
             Move();
@@ -338,6 +348,17 @@ namespace Web3_Elden_Ring
 
                 // if we are not grounded, do not jump
                 _inputController.jump = false;
+                
+                // Start counting the falling time
+                _currentFallTime += Time.deltaTime;
+
+                if (_currentFallTime >= maxFallTime)
+                {
+                    _maxFallTimeReached = true;
+                    _currentFallTime = 0f;
+                    
+                    OnMaxFallingTimeReached?.Invoke();
+                }
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)

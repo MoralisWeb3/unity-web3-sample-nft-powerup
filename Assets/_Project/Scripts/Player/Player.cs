@@ -16,13 +16,23 @@ namespace Web3_Elden_Ring
 
         [Header("VFX")]
         public GameObject boostVFX;
+        
+        //Control vars
+        private Vector3 _initPos;
 
-        public void Death()
+        private void Awake()
         {
-            movement.Deactivate();
-            input.EnableInput(false);
-            
-            animator.SetTrigger("Death");
+            _initPos = transform.position;
+        }
+
+        private void OnEnable()
+        {
+            movement.OnMaxFallingTimeReached += Respawn;
+        }
+
+        private void OnDisable()
+        {
+            movement.OnMaxFallingTimeReached -= Respawn;
         }
 
         private void Update()
@@ -41,6 +51,24 @@ namespace Web3_Elden_Ring
                 }
             }
         }
+        
+        public void Respawn()
+        {
+            input.EnableInput(false);
+            movement.enabled = false;
+            transform.SetPositionAndRotation(_initPos, Quaternion.identity);
+            //movement.enabled = true;
+        }
+
+        public void Death()
+        {
+            movement.Deactivate();
+            input.EnableInput(false);
+            
+            animator.SetTrigger("Death");
+        }
+
+        
     }
 }
 
