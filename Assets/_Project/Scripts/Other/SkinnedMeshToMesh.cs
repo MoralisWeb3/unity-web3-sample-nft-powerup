@@ -9,7 +9,7 @@ public class SkinnedMeshToMesh : MonoBehaviour
 
     public float refreshRate;
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(UpdateVFX());
     }

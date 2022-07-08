@@ -1980,12 +1980,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 539839446}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &560796815 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7695699321176519281, guid: df5aa7e09789aa14eb91a1d216ad581c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1841023763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &566295381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5680,11 +5674,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7695699320416839322, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: boostVFX
-      value: 
-      objectReference: {fileID: 560796815}
     - target: {fileID: 7695699320416839324, guid: df5aa7e09789aa14eb91a1d216ad581c,
         type: 3}
       propertyPath: m_RootOrder
@@ -5744,61 +5733,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699320416839399, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: maxFallTime
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699320696437245, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519281, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519283, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Name
-      value: Color
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.x
-      value: 1.4745098
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.y
-      value: 0.78431374
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.z
-      value: 0.8784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Overridden
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df5aa7e09789aa14eb91a1d216ad581c, type: 3}

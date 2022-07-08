@@ -718,7 +718,8 @@ MonoBehaviour:
   walletAddress: {fileID: 0}
   animator: {fileID: 7695699320416839323}
   characterController: {fileID: 7695699320416839396}
-  boostVFX: {fileID: 0}
+  boostVFX: {fileID: 7695699321176519281}
+  initPos: {x: 0, y: 0, z: 0}
 --- !u!114 &7695699320416839321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,6 +860,7 @@ MonoBehaviour:
   gravity: -15
   jumpTimeout: 0.3
   fallTimeout: 0.15
+  maxFallTime: 2.5
   grounded: 1
   groundedOffset: -0.14
   groundedRadius: 0.28
@@ -882,7 +884,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.8
-  m_Radius: 0.47
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.25
   m_SkinWidth: 0.02
@@ -1677,7 +1679,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 1.4745098, y: 0.78431374, z: 0.8784314, w: 1}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:

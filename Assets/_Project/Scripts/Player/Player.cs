@@ -27,21 +27,46 @@ namespace NFT_PowerUp
             initPos = transform.position;
         }
 
+        private void OnEnable()
+        {
+            movement.onMaxFallingTimeReached += DeactivatePowerUp;
+        }
+
+        private void OnDisable()
+        {
+            movement.onMaxFallingTimeReached -= DeactivatePowerUp;
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
                 if (movement.boosted)
                 {
-                    movement.ReturnMovementToDefault();
-                    boostVFX.SetActive(false);
+                    DeactivatePowerUp();
                 }
                 else
                 {
-                    movement.BoostMovementByPercentage(60);
-                    boostVFX.SetActive(true);
+                    ActivatePowerUp();
                 }
             }
+        }
+
+        #endregion
+
+
+        #region PRIVATE_METHODS
+
+        private void ActivatePowerUp()
+        {
+            movement.BoostMovementByPercentage(60);
+            boostVFX.SetActive(true);
+        }
+
+        private void DeactivatePowerUp()
+        {
+            movement.ReturnMovementToDefault();
+            boostVFX.SetActive(false);
         }
 
         #endregion
