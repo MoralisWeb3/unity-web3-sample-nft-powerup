@@ -62,24 +62,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""LightAttack"",
-                    ""type"": ""Button"",
-                    ""id"": ""4c96dbfc-cd54-46fb-936a-017586d1727b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Roll"",
-                    ""type"": ""Button"",
-                    ""id"": ""6cee2fde-9085-40d7-84fa-75df099f1455"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -258,50 +240,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0785a761-2285-4ceb-b1b0-5cf75368511a"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""LightAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fb9fbffb-43d4-4db9-98a0-d68ed47fecd4"",
-                    ""path"": ""<XInputController>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""LightAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""79a09a14-36ac-4ac2-83aa-5b0c0866bc93"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Roll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ac146d48-e04d-4e6a-93c8-25fb5971d292"",
-                    ""path"": ""<XInputController>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Roll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -382,146 +320,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""Victory"",
-            ""id"": ""99a041ca-11ad-4476-8b52-3dd716a769af"",
-            ""actions"": [
-                {
-                    ""name"": ""OpenMenu"",
-                    ""type"": ""Button"",
-                    ""id"": ""c8289a79-d9ee-4483-8ed4-c5ed2327643d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""PickUp"",
-                    ""type"": ""Button"",
-                    ""id"": ""a7c8d141-bfaf-4e3e-8726-4969ca209223"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Thriller"",
-                    ""type"": ""Button"",
-                    ""id"": ""48e85368-c810-47c0-a878-05fcbcd43e0b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""75b4b19a-6294-4d11-b0cc-3c852d84afd4"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""PickUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d15bc314-79e1-47e4-87c5-34e8fecfe827"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""PickUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a192e593-f139-4da5-ad16-796ff9a298e7"",
-                    ""path"": ""<Keyboard>/m"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""OpenMenu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""10f8b305-7946-4dae-beb2-aa436ec848bb"",
-                    ""path"": ""<XInputController>/start"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""OpenMenu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1b04ce4c-b209-4a97-ac12-927705423900"",
-                    ""path"": ""<Keyboard>/t"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Thriller"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""51976f7b-4f35-4389-87a4-e8af298bdbe0"",
-                    ""path"": ""<XInputController>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Thriller"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""PickingUp"",
-            ""id"": ""81ed2478-1ef0-463f-ba4f-ed3688ed4b9a"",
-            ""actions"": [
-                {
-                    ""name"": ""Cancel"",
-                    ""type"": ""Button"",
-                    ""id"": ""41f3cfc0-7988-41cc-a1bc-d0bfda49bf16"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""78a97f38-0a47-4e50-a8e3-15915227cc84"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""36d18cd2-2218-4528-bdfb-e847999c9aa7"",
-                    ""path"": ""<XInputController>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": [
@@ -580,22 +378,12 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
-        m_Player_LightAttack = m_Player.FindAction("LightAttack", throwIfNotFound: true);
-        m_Player_Roll = m_Player.FindAction("Roll", throwIfNotFound: true);
         // Exploring
         m_Exploring = asset.FindActionMap("Exploring", throwIfNotFound: true);
         m_Exploring_OpenMenu = m_Exploring.FindAction("OpenMenu", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_CloseMenu = m_Menu.FindAction("CloseMenu", throwIfNotFound: true);
-        // Victory
-        m_Victory = asset.FindActionMap("Victory", throwIfNotFound: true);
-        m_Victory_OpenMenu = m_Victory.FindAction("OpenMenu", throwIfNotFound: true);
-        m_Victory_PickUp = m_Victory.FindAction("PickUp", throwIfNotFound: true);
-        m_Victory_Thriller = m_Victory.FindAction("Thriller", throwIfNotFound: true);
-        // PickingUp
-        m_PickingUp = asset.FindActionMap("PickingUp", throwIfNotFound: true);
-        m_PickingUp_Cancel = m_PickingUp.FindAction("Cancel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -659,8 +447,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Sprint;
-    private readonly InputAction m_Player_LightAttack;
-    private readonly InputAction m_Player_Roll;
     public struct PlayerActions
     {
         private @GameInput m_Wrapper;
@@ -669,8 +455,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
-        public InputAction @LightAttack => m_Wrapper.m_Player_LightAttack;
-        public InputAction @Roll => m_Wrapper.m_Player_Roll;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -692,12 +476,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @Sprint.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
-                @LightAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLightAttack;
-                @LightAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLightAttack;
-                @LightAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLightAttack;
-                @Roll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
-                @Roll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
-                @Roll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -714,12 +492,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
-                @LightAttack.started += instance.OnLightAttack;
-                @LightAttack.performed += instance.OnLightAttack;
-                @LightAttack.canceled += instance.OnLightAttack;
-                @Roll.started += instance.OnRoll;
-                @Roll.performed += instance.OnRoll;
-                @Roll.canceled += instance.OnRoll;
             }
         }
     }
@@ -790,88 +562,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
-
-    // Victory
-    private readonly InputActionMap m_Victory;
-    private IVictoryActions m_VictoryActionsCallbackInterface;
-    private readonly InputAction m_Victory_OpenMenu;
-    private readonly InputAction m_Victory_PickUp;
-    private readonly InputAction m_Victory_Thriller;
-    public struct VictoryActions
-    {
-        private @GameInput m_Wrapper;
-        public VictoryActions(@GameInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @OpenMenu => m_Wrapper.m_Victory_OpenMenu;
-        public InputAction @PickUp => m_Wrapper.m_Victory_PickUp;
-        public InputAction @Thriller => m_Wrapper.m_Victory_Thriller;
-        public InputActionMap Get() { return m_Wrapper.m_Victory; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(VictoryActions set) { return set.Get(); }
-        public void SetCallbacks(IVictoryActions instance)
-        {
-            if (m_Wrapper.m_VictoryActionsCallbackInterface != null)
-            {
-                @OpenMenu.started -= m_Wrapper.m_VictoryActionsCallbackInterface.OnOpenMenu;
-                @OpenMenu.performed -= m_Wrapper.m_VictoryActionsCallbackInterface.OnOpenMenu;
-                @OpenMenu.canceled -= m_Wrapper.m_VictoryActionsCallbackInterface.OnOpenMenu;
-                @PickUp.started -= m_Wrapper.m_VictoryActionsCallbackInterface.OnPickUp;
-                @PickUp.performed -= m_Wrapper.m_VictoryActionsCallbackInterface.OnPickUp;
-                @PickUp.canceled -= m_Wrapper.m_VictoryActionsCallbackInterface.OnPickUp;
-                @Thriller.started -= m_Wrapper.m_VictoryActionsCallbackInterface.OnThriller;
-                @Thriller.performed -= m_Wrapper.m_VictoryActionsCallbackInterface.OnThriller;
-                @Thriller.canceled -= m_Wrapper.m_VictoryActionsCallbackInterface.OnThriller;
-            }
-            m_Wrapper.m_VictoryActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @OpenMenu.started += instance.OnOpenMenu;
-                @OpenMenu.performed += instance.OnOpenMenu;
-                @OpenMenu.canceled += instance.OnOpenMenu;
-                @PickUp.started += instance.OnPickUp;
-                @PickUp.performed += instance.OnPickUp;
-                @PickUp.canceled += instance.OnPickUp;
-                @Thriller.started += instance.OnThriller;
-                @Thriller.performed += instance.OnThriller;
-                @Thriller.canceled += instance.OnThriller;
-            }
-        }
-    }
-    public VictoryActions @Victory => new VictoryActions(this);
-
-    // PickingUp
-    private readonly InputActionMap m_PickingUp;
-    private IPickingUpActions m_PickingUpActionsCallbackInterface;
-    private readonly InputAction m_PickingUp_Cancel;
-    public struct PickingUpActions
-    {
-        private @GameInput m_Wrapper;
-        public PickingUpActions(@GameInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Cancel => m_Wrapper.m_PickingUp_Cancel;
-        public InputActionMap Get() { return m_Wrapper.m_PickingUp; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PickingUpActions set) { return set.Get(); }
-        public void SetCallbacks(IPickingUpActions instance)
-        {
-            if (m_Wrapper.m_PickingUpActionsCallbackInterface != null)
-            {
-                @Cancel.started -= m_Wrapper.m_PickingUpActionsCallbackInterface.OnCancel;
-                @Cancel.performed -= m_Wrapper.m_PickingUpActionsCallbackInterface.OnCancel;
-                @Cancel.canceled -= m_Wrapper.m_PickingUpActionsCallbackInterface.OnCancel;
-            }
-            m_Wrapper.m_PickingUpActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Cancel.started += instance.OnCancel;
-                @Cancel.performed += instance.OnCancel;
-                @Cancel.canceled += instance.OnCancel;
-            }
-        }
-    }
-    public PickingUpActions @PickingUp => new PickingUpActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -914,8 +604,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
-        void OnLightAttack(InputAction.CallbackContext context);
-        void OnRoll(InputAction.CallbackContext context);
     }
     public interface IExploringActions
     {
@@ -924,15 +612,5 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     public interface IMenuActions
     {
         void OnCloseMenu(InputAction.CallbackContext context);
-    }
-    public interface IVictoryActions
-    {
-        void OnOpenMenu(InputAction.CallbackContext context);
-        void OnPickUp(InputAction.CallbackContext context);
-        void OnThriller(InputAction.CallbackContext context);
-    }
-    public interface IPickingUpActions
-    {
-        void OnCancel(InputAction.CallbackContext context);
     }
 }

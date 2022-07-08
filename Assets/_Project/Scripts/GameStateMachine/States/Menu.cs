@@ -16,7 +16,6 @@ namespace NFT_PowerUp
 
         [Header("UI")] 
         [SerializeField] private Inventory inventory;
-        [SerializeField] private TextMeshProUGUI runeAmountText;
 
         private string _walletAddress;
         private GameInput _gameInput;
@@ -53,7 +52,7 @@ namespace NFT_PowerUp
 
         private void OnCloseMenu(InputAction.CallbackContext obj)
         {
-            LastActiveState();
+            Previous();
         }
 
         public void OnDisconnectPressed()
