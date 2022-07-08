@@ -221,9 +221,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Inventory
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 949d20fe290aecc4f9fbfe63cfc5abf9, type: 2}
-  m_sharedMaterial: {fileID: -2870332930483265123, guid: 949d20fe290aecc4f9fbfe63cfc5abf9,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -247,10 +246,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 42
   m_fontSizeBase: 45
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 42
   m_fontStyle: 1
@@ -420,6 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e18ae14a845dc42a5f6d95e0377f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleLabel: {fileID: 7927592223606826397}
+  titleText: Power-Ups
   itemPrefab: {fileID: 3501367664144109046, guid: 9b86ad6014c3f4e4ab838a0d284bb1a8,
     type: 3}
   itemsGrid: {fileID: 7927592223451782271}

@@ -1,4 +1,3 @@
-using System;
 using Pixelplacement;
 using UnityEngine;
 
@@ -6,6 +5,10 @@ namespace NFT_PowerUp
 {
     public class GameManager : StateMachine
     {
+        [Header("Smart Contract Data")] 
+        public string contractAddress;
+        public string contractAbi;
+        
         [Header("Main Components")]
         public Player player;
 

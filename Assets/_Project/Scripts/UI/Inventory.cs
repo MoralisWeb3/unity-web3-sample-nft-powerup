@@ -1,21 +1,49 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MoralisUnity;
-using MoralisUnity.Web3Api.Models;
+using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+using MoralisUnity;
+using MoralisUnity.Web3Api.Models;
+
+using Newtonsoft.Json; //Used to deserialize complex JSON --> https://code-maze.com/csharp-deserialize-complex-json-object/
+
 namespace NFT_PowerUp
 {
+    public class MetadataObject
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+        public string image { get; set; }
+
+        [CanBeNull] public List<AttributeObject> attributes { get; set; }
+    }
+
+    public class AttributeObject
+    {
+        [CanBeNull] public string display_type { get; set; }
+        public string trait_type { get; set; }
+        public float value { get; set; }
+    }
+    
     public class Inventory : MonoBehaviour
     {
         [Header("UI Elements")]
+        [SerializeField] private TextMeshProUGUI titleLabel;
+        [SerializeField] private string titleText;
         [SerializeField] private InventoryItem itemPrefab;
         [SerializeField] private GridLayoutGroup itemsGrid;
 
         private int _currentItemsCount;
-        
+
+        private void OnEnable()
+        {
+            titleLabel.text = titleText;
+        }
+
         public async void LoadItems(string playerAddress, string contractAddress, ChainList contractChain)
         {
             try
@@ -52,9 +80,17 @@ namespace NFT_PowerUp
                         continue;
                     }
                     
+                    // Deserialize metadata JSON to MetadataObject
                     var metadata = nftOwner.Metadata;
-                    MetadataObject metadataObject = JsonUtility.FromJson<MetadataObject>(metadata);
+                    MetadataObject metadataObject = DeserializeUsingNewtonSoftJson(metadata);
+                    
+                    // We ONLY want objects with attributes. If metadataObject is null or metadataObject.attributes is null, we don't continue
+                    if (metadataObject?.attributes is null)
+                    {
+                        return;
+                    }
 
+                    // Populate new item
                     PopulatePlayerItem(nftOwner.TokenId, metadataObject);
                 }
             }
@@ -81,6 +117,12 @@ namespace NFT_PowerUp
             }
 
             _currentItemsCount = 0;
+        }
+        
+        private MetadataObject? DeserializeUsingNewtonSoftJson(string json)
+        {
+            var company = JsonConvert.DeserializeObject<MetadataObject>(json);
+            return company;
         }
     }   
 }

@@ -17,11 +17,14 @@ namespace NFT_PowerUp
         [Header("UI")] 
         [SerializeField] private Inventory inventory;
 
-        private string _walletAddress;
+        private GameManager _gameManager;
         private GameInput _gameInput;
+
+        private string _walletAddress;
 
         private async void Awake()
         {
+            _gameManager = GetComponentInParent<GameManager>();
             _walletAddress = await Web3Tools.GetWalletAddress();
         }
 
@@ -38,10 +41,9 @@ namespace NFT_PowerUp
                 Debug.Log("We need the wallet address to continue");
                 return;
             }
-
-            // TODO!!!!!!!!
+            
             // We load all the items that we loot
-            //inventory.LoadItems(_walletAddress, GameManager.GameItemContractAddress, Moralis.CurrentChain.EnumValue);
+            inventory.LoadItems(_walletAddress, _gameManager.contractAddress, Moralis.CurrentChain.EnumValue);
         }
 
         private void OnDisable()

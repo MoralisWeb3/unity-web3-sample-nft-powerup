@@ -5,13 +5,6 @@ using UnityEngine.UI;
 
 namespace NFT_PowerUp
 {
-    public class MetadataObject
-    {
-        public string name;
-        public string description;
-        public string image;
-    }
-    
     public class InventoryItem : MonoBehaviour
     {
         [HideInInspector] public string myTokenId;
