@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Web3_Elden_Ring
+namespace NFT_PowerUp
 {
 	[RequireComponent(typeof(PlayerInput))]
 	public class PlayerInputController : MonoBehaviour

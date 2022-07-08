@@ -1,15 +1,12 @@
-using System.Collections.Generic;
-using System.Linq;
 using MoralisUnity;
 using MoralisUnity.Kits.AuthenticationKit;
-using MoralisUnity.Web3Api.Models;
 using Pixelplacement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MoralisTools;
 
-namespace Web3_Elden_Ring
+namespace NFT_PowerUp
 {
     public class Menu : State
     {
@@ -29,7 +26,7 @@ namespace Web3_Elden_Ring
             _walletAddress = await Web3Tools.GetWalletAddress();
         }
 
-        private async void OnEnable()
+        private void OnEnable()
         {
             playerInputController.EnableInput(false);
             
@@ -42,22 +39,10 @@ namespace Web3_Elden_Ring
                 Debug.Log("We need the wallet address to continue");
                 return;
             }
-            
-            List<Erc20TokenBalance> listOfTokens = await Moralis.Web3Api.Account.GetTokenBalances(_walletAddress, Moralis.CurrentChain.EnumValue);
-            if (!listOfTokens.Any()) return;
-            
-            foreach (var token in listOfTokens)
-            {
-                // We make the sure that is the token that we deployed
-                if (token.TokenAddress == GameManager.RuneContractAddress.ToLower())
-                {
-                    runeAmountText.text = token.Balance;
-                    Debug.Log($"We have {token.Balance} runes (XP)");
-                }
-            }
-            
+
+            // TODO!!!!!!!!
             // We load all the items that we loot
-            inventory.LoadItems(_walletAddress, GameManager.GameItemContractAddress, Moralis.CurrentChain.EnumValue);
+            //inventory.LoadItems(_walletAddress, GameManager.GameItemContractAddress, Moralis.CurrentChain.EnumValue);
         }
 
         private void OnDisable()
@@ -74,11 +59,6 @@ namespace Web3_Elden_Ring
         public void OnDisconnectPressed()
         {
             authenticationKit.Disconnect();
-        }
-
-        public void ViewRuneContractOnPolygonScan()
-        {
-            Web3Tools.CheckContractOnPolygonScan(GameManager.RuneContractAddress);
         }
     }   
 }

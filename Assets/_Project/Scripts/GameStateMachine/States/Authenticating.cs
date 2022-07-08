@@ -1,7 +1,7 @@
 using Pixelplacement;
 using UnityEngine;
 
-namespace Web3_Elden_Ring
+namespace NFT_PowerUp
 {
     public class Authenticating : State
     {

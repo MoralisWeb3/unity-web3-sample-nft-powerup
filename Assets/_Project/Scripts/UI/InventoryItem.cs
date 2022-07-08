@@ -1,11 +1,17 @@
 using System.Collections;
-using MoralisUnity;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-namespace Web3_Elden_Ring
+namespace NFT_PowerUp
 {
+    public class MetadataObject
+    {
+        public string name;
+        public string description;
+        public string image;
+    }
+    
     public class InventoryItem : MonoBehaviour
     {
         [HideInInspector] public string myTokenId;
@@ -22,11 +28,6 @@ namespace Web3_Elden_Ring
             StartCoroutine(GetTexture(myMetadataObject.image));
         }
 
-        public void NavigateToOpensea()
-        {
-            MoralisTools.Web3Tools.CheckNftOnOpenSea(GameManager.GameItemContractAddress, Moralis.CurrentChain.Name, myTokenId);
-        }
-        
         private IEnumerator GetTexture(string imageUrl)
         {
             using UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(imageUrl);

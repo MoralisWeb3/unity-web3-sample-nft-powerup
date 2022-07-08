@@ -6,7 +6,7 @@ using MoralisUnity.Web3Api.Models;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Web3_Elden_Ring
+namespace NFT_PowerUp
 {
     public class Inventory : MonoBehaviour
     {
