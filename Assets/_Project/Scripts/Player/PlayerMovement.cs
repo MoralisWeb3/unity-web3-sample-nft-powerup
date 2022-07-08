@@ -88,7 +88,6 @@ namespace NFT_PowerUp
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
         private float _currentFallTime;
-        private bool _maxFallTimeReached;
         
         // Movement init values
         private float _initMoveSpeed;
@@ -147,8 +146,6 @@ namespace NFT_PowerUp
 
         private void Update()
         {
-            if (_maxFallTimeReached) return;
-            
             JumpAndGravity();
             GroundedCheck();
             Move();
@@ -354,7 +351,6 @@ namespace NFT_PowerUp
 
                 if (_currentFallTime >= maxFallTime)
                 {
-                    _maxFallTimeReached = true;
                     _currentFallTime = 0f;
                     
                     OnMaxFallingTimeReached?.Invoke();
