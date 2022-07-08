@@ -17,21 +17,14 @@ namespace NFT_PowerUp
         public GameObject boostVFX;
         
         //Control vars
-        private Vector3 _initPos;
+        [HideInInspector] public Vector3 initPos;
+
+
+        #region UNITY_LIFECYCLE
 
         private void Awake()
         {
-            _initPos = transform.position;
-        }
-
-        private void OnEnable()
-        {
-            movement.OnMaxFallingTimeReached += Respawn;
-        }
-
-        private void OnDisable()
-        {
-            movement.OnMaxFallingTimeReached -= Respawn;
+            initPos = transform.position;
         }
 
         private void Update()
@@ -50,22 +43,8 @@ namespace NFT_PowerUp
                 }
             }
         }
-        
-        public void Respawn()
-        {
-            input.EnableInput(false);
-            movement.enabled = false;
-            transform.SetPositionAndRotation(_initPos, Quaternion.identity);
-            //movement.enabled = true;
-        }
 
-        public void Death()
-        {
-            movement.Deactivate();
-            input.EnableInput(false);
-            
-            animator.SetTrigger("Death");
-        }
+        #endregion
     }
 }
 

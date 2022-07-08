@@ -9,7 +9,7 @@ namespace NFT_PowerUp
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerMovement : MonoBehaviour
     {
-        public Action OnMaxFallingTimeReached;
+        public Action onMaxFallingTimeReached;
         
         [Header("Player Movement")]
         [Tooltip("Move speed of the character in m/s")]
@@ -298,6 +298,9 @@ namespace NFT_PowerUp
         {
             if (grounded)
             {
+                // reset current fall time
+                _currentFallTime = 0f;
+                
                 // reset the fall timeout timer
                 _fallTimeoutDelta = fallTimeout;
 
@@ -352,8 +355,7 @@ namespace NFT_PowerUp
                 if (_currentFallTime >= maxFallTime)
                 {
                     _currentFallTime = 0f;
-                    
-                    OnMaxFallingTimeReached?.Invoke();
+                    onMaxFallingTimeReached?.Invoke();
                 }
             }
 
