@@ -36,7 +36,7 @@ namespace Web3_Elden_Ring
                 }
                 else
                 {
-                    movement.BoostMovementByPercentage(25);
+                    movement.BoostMovementByPercentage(60);
                     boostVFX.SetActive(true);
                 }
             }
