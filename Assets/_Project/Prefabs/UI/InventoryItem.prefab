@@ -215,8 +215,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3501367664144109046}
-        m_TargetAssemblyTypeName: Web3_Elden_Ring.InventoryItem, Assembly-CSharp
-        m_MethodName: NavigateToOpensea
+        m_TargetAssemblyTypeName: NFT_PowerUp.InventoryItem, Assembly-CSharp
+        m_MethodName: Selected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

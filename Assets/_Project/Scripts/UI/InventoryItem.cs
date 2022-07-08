@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -7,6 +8,8 @@ namespace NFT_PowerUp
 {
     public class InventoryItem : MonoBehaviour
     {
+        public static Action<InventoryItem> onSelected;
+        
         [HideInInspector] public string myTokenId;
         [HideInInspector] public MetadataObject myMetadataObject;
 
@@ -21,9 +24,9 @@ namespace NFT_PowerUp
             StartCoroutine(GetTexture(myMetadataObject.image));
         }
 
-        public void ItemClicked()
+        public void Selected()
         {
-            // Send
+            onSelected?.Invoke(this);
         }
 
         private IEnumerator GetTexture(string imageUrl)
