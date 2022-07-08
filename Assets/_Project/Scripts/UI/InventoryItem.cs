@@ -21,6 +21,11 @@ namespace NFT_PowerUp
             StartCoroutine(GetTexture(myMetadataObject.image));
         }
 
+        public void ItemClicked()
+        {
+            // Send
+        }
+
         private IEnumerator GetTexture(string imageUrl)
         {
             using UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(imageUrl);

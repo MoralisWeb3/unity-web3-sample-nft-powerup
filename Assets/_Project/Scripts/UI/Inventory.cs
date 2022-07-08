@@ -119,10 +119,11 @@ namespace NFT_PowerUp
             _currentItemsCount = 0;
         }
         
-        private MetadataObject? DeserializeUsingNewtonSoftJson(string json)
+        [CanBeNull]
+        private MetadataObject DeserializeUsingNewtonSoftJson(string json)
         {
-            var company = JsonConvert.DeserializeObject<MetadataObject>(json);
-            return company;
+            var metadataObject = JsonConvert.DeserializeObject<MetadataObject>(json);
+            return metadataObject;
         }
     }   
 }
