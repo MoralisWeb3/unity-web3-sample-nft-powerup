@@ -23,20 +23,10 @@ namespace NFT_PowerUp
             initPos = transform.position;
         }
 
-        private void OnEnable()
-        {
-            movement.onMaxFallingTimeReached += DeactivatePowerUp;
-        }
-
-        private void OnDisable()
-        {
-            movement.onMaxFallingTimeReached -= DeactivatePowerUp;
-        }
-
         #endregion
 
 
-        #region PRIVATE_METHODS
+        #region PUBLIC_METHODS
 
         public void ActivatePowerUp(float percentage)
         {

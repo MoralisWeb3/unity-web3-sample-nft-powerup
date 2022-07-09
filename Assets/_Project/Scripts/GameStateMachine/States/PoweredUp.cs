@@ -12,22 +12,27 @@ namespace NFT_PowerUp
         public List<ScriptableRendererFeature> rendererFeatures;
 
         private GameManager _gameManager;
+        private AudioSource _audioSource;
 
         private void Awake()
         {
             _gameManager = GetComponentInParent<GameManager>();
+            _audioSource = GetComponent<AudioSource>();
         }
 
         private void OnEnable()
         {
+            StartCoroutine(AutoDisable(_gameManager.currentPowerUp.boostDuration));
+            
             foreach (var rendererFeature in rendererFeatures)
             {
                 rendererFeature.SetActive(true);
             }
             
-            player.ActivatePowerUp(_gameManager.currentPowerUp.boostPercentage);
+            _audioSource.Play();
             
-            StartCoroutine(AutoDisable(_gameManager.currentPowerUp.boostDuration));
+            player.ActivatePowerUp(_gameManager.currentPowerUp.boostPercentage);
+            player.movement.onMaxFallingTimeReached += GoToExploring;
         }
 
         private void OnDisable()
@@ -37,13 +42,21 @@ namespace NFT_PowerUp
                 rendererFeature.SetActive(false);
             }
             
+            _audioSource.Stop();
+            
             player.DeactivatePowerUp();
+            player.movement.onMaxFallingTimeReached -= GoToExploring;
         }
 
         private IEnumerator AutoDisable(float waitTime)
         {
             yield return new WaitForSeconds(waitTime);
             
+            GoToExploring();
+        }
+
+        private void GoToExploring()
+        {
             ChangeState("Exploring");
         }
     }   
