@@ -48,12 +48,12 @@ Material:
     - _CastShadows: 0
     - _Cull: 2
     - _DstBlend: 10
-    - _FullscreenIntensity: 0.19
+    - _FullscreenIntensity: 0.196
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _VignetteIntensity: 0.75
+    - _VignetteIntensity: 0.8
     - _VignetteRadiusPower: 6
     - _VoronoiScale: 8
     - _VoronoiSpeed: 1
