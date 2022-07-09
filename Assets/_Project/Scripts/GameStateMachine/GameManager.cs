@@ -11,7 +11,7 @@ namespace NFT_PowerUp
         
         [Header("Main Components")]
         public Player player;
-
+        
         [HideInInspector] public InventoryItem currentPowerUp;
 
         
@@ -29,6 +29,21 @@ namespace NFT_PowerUp
             player.movement.onMaxFallingTimeReached -= RespawnPlayer;
             
             InventoryItem.onSelected -= GoToConsumingPowerUp;
+        }
+
+        #endregion
+
+
+        #region STATE_MACHINE
+
+        public void OnStateEnteredHandler(GameObject stateEntered)
+        {
+            
+        }
+        
+        public void OnStateExitedHandler(GameObject stateExited)
+        {
+            
         }
 
         #endregion

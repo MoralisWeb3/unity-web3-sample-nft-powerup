@@ -5,13 +5,13 @@ namespace NFT_PowerUp
 {
     public class Exploring : State
     {
-        public PlayerInputController playerInputController;
+        public Player player;
 
         private GameInput _gameInput;
         
         private void OnEnable()
         {
-            playerInputController.EnableInput(true);
+            player.input.EnableInput(true);
             
             _gameInput = new GameInput();
             _gameInput.Exploring.Enable();

@@ -1,7 +1,6 @@
 using MoralisUnity;
 using MoralisUnity.Kits.AuthenticationKit;
 using Pixelplacement;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MoralisTools;
@@ -11,7 +10,7 @@ namespace NFT_PowerUp
     public class Menu : State
     {
         [Header("Components")]
-        [SerializeField] private PlayerInputController playerInputController;
+        [SerializeField] private Player player;
         [SerializeField] private AuthenticationKit authenticationKit;
 
         [Header("UI")] 
@@ -30,7 +29,7 @@ namespace NFT_PowerUp
 
         private void OnEnable()
         {
-            playerInputController.EnableInput(false);
+            player.input.EnableInput(false);
             
             _gameInput = new GameInput();
             _gameInput.Menu.Enable();

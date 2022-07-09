@@ -57,13 +57,13 @@ namespace NFT_PowerUp
 
         #region PRIVATE_METHODS
 
-        private void ActivatePowerUp()
+        public void ActivatePowerUp()
         {
             movement.BoostMovementByPercentage(60);
             boostVFX.SetActive(true);
         }
 
-        private void DeactivatePowerUp()
+        public void DeactivatePowerUp()
         {
             movement.ReturnMovementToDefault();
             boostVFX.SetActive(false);

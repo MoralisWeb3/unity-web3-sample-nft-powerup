@@ -1,15 +1,14 @@
 using Pixelplacement;
-using UnityEngine;
 
 namespace NFT_PowerUp
 {
     public class Authenticating : State
     {
-        [SerializeField] private PlayerInputController playerInputController;
+        public Player player;
 
         private void OnEnable()
         {
-            playerInputController.EnableInput(false);
+            player.input.EnableInput(false);
         }
     }   
 }
