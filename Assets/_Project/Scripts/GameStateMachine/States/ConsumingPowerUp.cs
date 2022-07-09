@@ -46,10 +46,11 @@ namespace NFT_PowerUp
 
         private async UniTask<string> ExecuteConsuming(string tokenId)
         {
+            // I assume tokenId is a string just made of numbers
             var longTokenId = Convert.ToInt64(tokenId);
             
             object[] parameters = {
-                longTokenId.ToString("x") // This is the format the contract expects //TODOOOOOO
+                longTokenId.ToString("x") // This is what the contract expects
             };
 
             // Set gas estimate

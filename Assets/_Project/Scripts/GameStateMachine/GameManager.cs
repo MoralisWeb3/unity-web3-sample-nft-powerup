@@ -84,8 +84,10 @@ namespace NFT_PowerUp
         }
 
         #endregion
-        
-        
+
+
+        #region PUBLIC_METHODS
+
         public void StartGame()
         {
             ChangeState("Exploring");
@@ -96,6 +98,11 @@ namespace NFT_PowerUp
             ChangeState("Authenticating");
         }
 
+        #endregion
+        
+        
+        #region PRIVATE_METHODS
+        
         private void RespawnPlayer()
         {
             player.gameObject.SetActive(false);
@@ -111,5 +118,7 @@ namespace NFT_PowerUp
             // We change to the state that will take care of the burning transaction
             ChangeState("ConsumingPowerUp");
         }
+        
+        #endregion
     }   
 }

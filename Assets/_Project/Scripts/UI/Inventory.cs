@@ -99,6 +99,11 @@ namespace NFT_PowerUp
                         return;
                     }
 
+                    foreach (var attribute in metadataObject.attributes)
+                    {
+                        
+                    }
+
                     // Populate new item
                     PopulatePlayerItem(nftOwner.TokenId, metadataObject);
                 }
