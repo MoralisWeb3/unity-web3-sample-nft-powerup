@@ -41,9 +41,7 @@ namespace NFT_PowerUp
 
             // We tell the GameManager what we minted the item successfully
             statusText.text = "Transaction completed!";
-            
-            
-            // TODO ChangeState("Exploring"); // POWERED UP
+            ChangeState("PoweredUp");
         }
 
         private async UniTask<string> ExecuteConsuming(string tokenId)
