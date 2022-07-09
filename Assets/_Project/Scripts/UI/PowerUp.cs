@@ -6,13 +6,19 @@ using UnityEngine.UI;
 
 namespace NFT_PowerUp
 {
-    public class InventoryItem : MonoBehaviour
+    public class PowerUp : MonoBehaviour
     {
-        public static Action<InventoryItem> onSelected;
+        public static Action<PowerUp> onSelected;
+
+        // Power-Up values
+        [HideInInspector] public float boostPercentage;
+        [HideInInspector] public float boostDuration;
         
+        // Metadata values
         [HideInInspector] public string myTokenId;
         [HideInInspector] public MetadataObject myMetadataObject;
 
+        [Header("UI Components")]
         [SerializeField] private Image myIcon;
         [SerializeField] private Button myButton;
         
@@ -20,6 +26,32 @@ namespace NFT_PowerUp
         {
             myTokenId = tokenId;
             myMetadataObject = metadataObject;
+            
+            if (myMetadataObject.attributes is null)
+            {
+                Debug.Log("No attributes found");
+                return;
+            }
+            
+            // Get Power-Up values
+            foreach (var attribute in myMetadataObject.attributes)
+            {
+                if (attribute.display_type == "boost_percentage")
+                {
+                    if (attribute.trait_type == "Movement")
+                    {
+                        boostPercentage = attribute.value;   
+                    }
+                }
+
+                if (attribute.display_type == "boost_number")
+                {
+                    if (attribute.trait_type == "Duration")
+                    {
+                        boostDuration = attribute.value;
+                    }
+                }
+            }
 
             StartCoroutine(GetTexture(myMetadataObject.image));
         }

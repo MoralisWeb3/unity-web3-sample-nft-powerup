@@ -9,10 +9,6 @@ namespace NFT_PowerUp
         public PlayerMovement movement;
         public PlayerWalletAddress walletAddress;
 
-        [Header("Unity Native Components")]
-        public Animator animator;
-        public CharacterController characterController;
-
         [Header("VFX")]
         public GameObject boostVFX;
         

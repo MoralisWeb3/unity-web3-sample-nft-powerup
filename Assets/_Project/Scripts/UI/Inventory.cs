@@ -34,7 +34,7 @@ namespace NFT_PowerUp
         [Header("UI Elements")]
         [SerializeField] private TextMeshProUGUI titleLabel;
         [SerializeField] private string titleText;
-        [SerializeField] private InventoryItem itemPrefab;
+        [SerializeField] private PowerUp itemPrefab;
         [SerializeField] private GridLayoutGroup itemsGrid;
 
         private int _currentItemsCount;
@@ -99,11 +99,6 @@ namespace NFT_PowerUp
                         return;
                     }
 
-                    foreach (var attribute in metadataObject.attributes)
-                    {
-                        
-                    }
-
                     // Populate new item
                     PopulatePlayerItem(nftOwner.TokenId, metadataObject);
                 }
@@ -116,7 +111,7 @@ namespace NFT_PowerUp
     
         private void PopulatePlayerItem(string tokenId, MetadataObject metadataObject)
         {
-            InventoryItem newItem = Instantiate(itemPrefab, itemsGrid.transform);
+            PowerUp newItem = Instantiate(itemPrefab, itemsGrid.transform);
             
             newItem.Init(tokenId, metadataObject);
 
