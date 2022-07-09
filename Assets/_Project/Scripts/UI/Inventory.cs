@@ -57,6 +57,8 @@ namespace NFT_PowerUp
                 // We only proceed if we find some
                 if (!nftOwners.Any())
                 {
+                    ClearAllItems(); // If we don't own NFTs, we don't want to show any residual item
+                    
                     Debug.Log("You don't own items");
                     return;
                 }
@@ -78,6 +80,13 @@ namespace NFT_PowerUp
                         
                         Debug.Log("We couldn't get NFT Metadata. Re-syncing...");
                         continue;
+                    }
+
+                    // Check if tokenUri is null. If it's null it means it has probably been burned but it still appears
+                    if (nftOwner.TokenUri is null)
+                    {
+                        Debug.Log("Token already burned");
+                        return;
                     }
                     
                     // Deserialize metadata JSON to MetadataObject
