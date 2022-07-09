@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using MoralisUnity;
 using Nethereum.Hex.HexTypes;
@@ -47,8 +48,10 @@ namespace NFT_PowerUp
 
         private async UniTask<string> ExecuteConsuming(string tokenId)
         {
+            var longTokenId = Convert.ToInt64(tokenId);
+            
             object[] parameters = {
-                tokenId // This is the format the contract expects //TODOOOOOO
+                longTokenId.ToString("x") // This is the format the contract expects //TODOOOOOO
             };
 
             // Set gas estimate
