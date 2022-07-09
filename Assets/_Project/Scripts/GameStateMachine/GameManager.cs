@@ -38,6 +38,11 @@ namespace NFT_PowerUp
         {
             ChangeState("Exploring");
         }
+        
+        public void GoToAuthenticating()
+        {
+            ChangeState("Authenticating");
+        }
 
         private void RespawnPlayer()
         {
