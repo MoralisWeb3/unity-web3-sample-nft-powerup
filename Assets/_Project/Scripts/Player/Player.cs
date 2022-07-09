@@ -33,29 +33,14 @@ namespace NFT_PowerUp
             movement.onMaxFallingTimeReached -= DeactivatePowerUp;
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                if (movement.boosted)
-                {
-                    DeactivatePowerUp();
-                }
-                else
-                {
-                    ActivatePowerUp();
-                }
-            }
-        }
-
         #endregion
 
 
         #region PRIVATE_METHODS
 
-        public void ActivatePowerUp()
+        public void ActivatePowerUp(float percentage)
         {
-            movement.BoostMovementByPercentage(60);
+            movement.BoostMovementByPercentage(percentage);
             boostVFX.SetActive(true);
         }
 
