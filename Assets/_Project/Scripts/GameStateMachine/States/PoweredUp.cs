@@ -11,8 +11,6 @@ namespace NFT_PowerUp
 
         private void OnEnable()
         {
-            player.input.EnableInput(true);
-            
             foreach (var rendererFeature in rendererFeatures)
             {
                 rendererFeature.SetActive(true);

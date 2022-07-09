@@ -10,7 +10,6 @@ namespace NFT_PowerUp
     public class Menu : State
     {
         [Header("Components")]
-        [SerializeField] private Player player;
         [SerializeField] private AuthenticationKit authenticationKit;
 
         [Header("UI")] 
@@ -29,8 +28,6 @@ namespace NFT_PowerUp
 
         private void OnEnable()
         {
-            player.input.EnableInput(false);
-            
             _gameInput = new GameInput();
             _gameInput.Menu.Enable();
             _gameInput.Menu.CloseMenu.performed += OnCloseMenu;

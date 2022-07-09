@@ -5,14 +5,10 @@ namespace NFT_PowerUp
 {
     public class Exploring : State
     {
-        public Player player;
-
         private GameInput _gameInput;
         
         private void OnEnable()
         {
-            player.input.EnableInput(true);
-            
             _gameInput = new GameInput();
             _gameInput.Exploring.Enable();
             _gameInput.Exploring.OpenMenu.performed += OnOpenMenu;

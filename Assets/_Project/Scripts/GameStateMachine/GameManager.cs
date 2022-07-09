@@ -38,12 +38,49 @@ namespace NFT_PowerUp
 
         public void OnStateEnteredHandler(GameObject stateEntered)
         {
-            
+            switch (stateEntered.name)
+            {
+                case "Authenticating":
+                    player.input.EnableInput(false);
+                    break;
+                
+                case "Exploring":
+                    player.input.EnableInput(true);
+                    break;
+                
+                case "Menu":
+                    player.input.EnableInput(false);
+                    break;
+                
+                case "ConsumingPowerUp":
+                    player.input.EnableInput(false);
+                    break;
+                
+                case "PoweredUp":
+                    player.input.EnableInput(true);
+                    break;
+            }
         }
         
         public void OnStateExitedHandler(GameObject stateExited)
         {
-            
+            switch (stateExited.name)
+            {
+                case "Authenticating":
+                    break;
+                
+                case "Exploring":
+                    break;
+                
+                case "Menu":
+                    break;
+                
+                case "ConsumingPowerUp":
+                    break;
+                
+                case "PoweredUp":
+                    break;
+            }
         }
 
         #endregion
