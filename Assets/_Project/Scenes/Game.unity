@@ -4554,6 +4554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc18c97673931ba458b4008424976096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 6311872665742446418}
   statusText: {fileID: 1707499931}
 --- !u!1001 &1402827283
 PrefabInstance:

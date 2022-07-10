@@ -11,8 +11,9 @@ namespace NFT_PowerUp
         
         [Header("Main Components")]
         public Player player;
+        public Inventory inventory;
         
-        [HideInInspector] public PowerUp currentPowerUp;
+        [HideInInspector] public InventoryItem currentPowerUp;
 
         
         #region UNITY_LIFCYCLE
@@ -21,14 +22,14 @@ namespace NFT_PowerUp
         {
             player.movement.onMaxFallingTimeReached += RespawnPlayer;
 
-            PowerUp.onSelected += GoToConsumingPowerUp;
+            InventoryItem.onSelected += GoToConsumingPowerUp;
         }
 
         private void OnDisable()
         {
             player.movement.onMaxFallingTimeReached -= RespawnPlayer;
             
-            PowerUp.onSelected -= GoToConsumingPowerUp;
+            InventoryItem.onSelected -= GoToConsumingPowerUp;
         }
 
         #endregion
@@ -79,6 +80,8 @@ namespace NFT_PowerUp
                     break;
                 
                 case "PoweredUp":
+                    // When we exit PoweredUp state, we can destroy the current used power up :)
+                    DestroyCurrentPowerUp();
                     break;
             }
         }
@@ -98,6 +101,12 @@ namespace NFT_PowerUp
             ChangeState("Authenticating");
         }
 
+        private void DestroyCurrentPowerUp()
+        {
+            inventory.DeleteCurrentSelectedItem();
+            currentPowerUp = null;
+        }
+
         #endregion
         
         
@@ -110,7 +119,7 @@ namespace NFT_PowerUp
             player.gameObject.SetActive(true);
         }
         
-        private void GoToConsumingPowerUp(PowerUp selectedPowerUp)
+        private void GoToConsumingPowerUp(InventoryItem selectedPowerUp)
         {
             // We save the current selected item (NFT PowerUp)
             currentPowerUp = selectedPowerUp;

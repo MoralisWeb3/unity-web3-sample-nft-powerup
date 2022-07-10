@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 namespace NFT_PowerUp
 {
-    public class PowerUp : MonoBehaviour
+    public class InventoryItem : MonoBehaviour
     {
-        public static Action<PowerUp> onSelected;
+        public static Action<InventoryItem> onSelected;
 
         // Power-Up values
         [HideInInspector] public float boostPercentage;

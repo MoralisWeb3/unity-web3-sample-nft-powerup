@@ -41,6 +41,8 @@ namespace NFT_PowerUp
 
             // We tell the GameManager what we minted the item successfully
             statusText.text = "Transaction completed!";
+            
+            // We go to "PoweredUp" state
             ChangeState("PoweredUp");
         }
 

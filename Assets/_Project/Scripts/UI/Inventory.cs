@@ -34,14 +34,22 @@ namespace NFT_PowerUp
         [Header("UI Elements")]
         [SerializeField] private TextMeshProUGUI titleLabel;
         [SerializeField] private string titleText;
-        [SerializeField] private PowerUp itemPrefab;
+        [SerializeField] private InventoryItem itemPrefab;
         [SerializeField] private GridLayoutGroup itemsGrid;
 
+        private InventoryItem _currentSelectedItem;
         private int _currentItemsCount;
 
         private void OnEnable()
         {
+            InventoryItem.onSelected += CaptureCurrentSelectedItem;
+            
             titleLabel.text = titleText;
+        }
+
+        private void OnDisable()
+        {
+            InventoryItem.onSelected -= CaptureCurrentSelectedItem;
         }
 
         public async void LoadItems(string playerAddress, string contractAddress, ChainList contractChain)
@@ -57,8 +65,6 @@ namespace NFT_PowerUp
                 // We only proceed if we find some
                 if (!nftOwners.Any())
                 {
-                    ClearAllItems(); // If we don't own NFTs, we don't want to show any residual item
-                    
                     Debug.Log("You don't own items");
                     return;
                 }
@@ -111,11 +117,31 @@ namespace NFT_PowerUp
     
         private void PopulatePlayerItem(string tokenId, MetadataObject metadataObject)
         {
-            PowerUp newItem = Instantiate(itemPrefab, itemsGrid.transform);
+            InventoryItem newItem = Instantiate(itemPrefab, itemsGrid.transform);
             
             newItem.Init(tokenId, metadataObject);
 
             _currentItemsCount++;
+        }
+
+        public void DeleteItem(string id)
+        {
+            foreach (Transform item in itemsGrid.transform)
+            {
+                InventoryItem itemClass = item.GetComponent<InventoryItem>(); // Assuming every item has InventoryItem script
+
+                if (itemClass.myTokenId == id)
+                {
+                    Destroy(item.gameObject);
+                    _currentItemsCount--;
+                }
+            }
+        }
+
+        public void DeleteCurrentSelectedItem()
+        {
+            Destroy(_currentSelectedItem);
+            _currentItemsCount--;
         }
 
         private void ClearAllItems()
@@ -126,6 +152,11 @@ namespace NFT_PowerUp
             }
 
             _currentItemsCount = 0;
+        }
+
+        private void CaptureCurrentSelectedItem(InventoryItem selectedItem)
+        {
+            _currentSelectedItem = selectedItem;
         }
         
         [CanBeNull]
