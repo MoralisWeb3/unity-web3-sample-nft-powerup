@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.7;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+
+// DISCLAIMER -- NOT PRODUCTION READY CONTRACT
+
+contract PowerUp is ERC721URIStorage {
+
+    address owner;
+
+    constructor() ERC721("PowerUp", "PWR") {
+        owner = msg.sender;
+    }
+    
+    function create(uint256 tokenId, string memory tokenURI) public
+    {
+        // DISCLAIMER Public method. Implement some kind of user access control
+        // require(msg.sender == owner);
+
+        _mint(msg.sender, tokenId);
+        _setTokenURI(tokenId, tokenURI);
+    }
+
+    function consume(uint256 tokenId) public
+    {
+        // DISCLAIMER Public method. Implement some kind of user access control
+        // require(msg.sender == owner);
+
+        _burn(tokenId);
+    }
+}
