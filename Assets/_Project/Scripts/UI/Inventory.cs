@@ -4,7 +4,6 @@ using System.Linq;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 using MoralisUnity;
 using MoralisUnity.Web3Api.Models;
@@ -40,6 +39,9 @@ namespace NFT_PowerUp
         private InventoryItem _currentSelectedItem;
         private int _currentItemsCount;
 
+
+        #region UNITY_LIFECYCLE
+
         private void OnEnable()
         {
             InventoryItem.onSelected += CaptureSelectedItem;
@@ -51,6 +53,11 @@ namespace NFT_PowerUp
         {
             InventoryItem.onSelected -= CaptureSelectedItem;
         }
+
+        #endregion
+
+
+        #region PUBLIC_METHODS
 
         public async void LoadItems(string playerAddress, string contractAddress, ChainList contractChain)
         {
@@ -75,8 +82,10 @@ namespace NFT_PowerUp
                     return;
                 }
                 
-                ClearAllItems(); // We clear the grid before adding new items
+                // We clear the grid before adding new items
+                ClearAllItems(); 
                 
+                // If we own one or more NFTs...
                 foreach (var nftOwner in nftOwners)
                 {
                     if (nftOwner.Metadata == null)
@@ -114,7 +123,18 @@ namespace NFT_PowerUp
                 Debug.LogError(exp.Message);
             }
         }
-    
+        
+        public void DeleteCurrentSelectedItem()
+        {
+            Destroy(_currentSelectedItem.gameObject);
+            _currentItemsCount--;
+        }
+
+        #endregion
+
+
+        #region PRIVATE_METHODS
+
         private void PopulatePlayerItem(string tokenId, MetadataObject metadataObject)
         {
             InventoryItem newItem = Instantiate(itemPrefab, content);
@@ -138,12 +158,6 @@ namespace NFT_PowerUp
             }
         }
 
-        public void DeleteCurrentSelectedItem()
-        {
-            Destroy(_currentSelectedItem.gameObject);
-            _currentItemsCount--;
-        }
-
         private void ClearAllItems()
         {
             foreach (Transform item in content)
@@ -153,11 +167,6 @@ namespace NFT_PowerUp
 
             _currentItemsCount = 0;
         }
-
-        private void CaptureSelectedItem(InventoryItem selectedItem)
-        {
-            _currentSelectedItem = selectedItem;
-        }
         
         [CanBeNull]
         private MetadataObject DeserializeUsingNewtonSoftJson(string json)
@@ -165,5 +174,17 @@ namespace NFT_PowerUp
             var metadataObject = JsonConvert.DeserializeObject<MetadataObject>(json);
             return metadataObject;
         }
+
+        #endregion
+
+
+        #region EVENT_HANDLERS
+
+        private void CaptureSelectedItem(InventoryItem selectedItem)
+        {
+            _currentSelectedItem = selectedItem;
+        }
+
+        #endregion
     }   
 }
