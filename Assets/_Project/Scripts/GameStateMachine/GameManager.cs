@@ -80,8 +80,8 @@ namespace NFT_PowerUp
                     break;
                 
                 case "PoweredUp":
-                    // When we exit PoweredUp state, we can destroy the current used power up :)
-                    DestroyCurrentPowerUp();
+                    // We can set currentPowerUp to null because we just consumed it
+                    currentPowerUp = null;
                     break;
             }
         }
@@ -99,12 +99,6 @@ namespace NFT_PowerUp
         public void GoToAuthenticating()
         {
             ChangeState("Authenticating");
-        }
-
-        private void DestroyCurrentPowerUp()
-        {
-            inventory.DeleteCurrentSelectedItem();
-            currentPowerUp = null;
         }
 
         #endregion

@@ -42,14 +42,14 @@ namespace NFT_PowerUp
 
         private void OnEnable()
         {
-            InventoryItem.onSelected += CaptureCurrentSelectedItem;
+            InventoryItem.onSelected += CaptureSelectedItem;
             
             titleLabel.text = titleText;
         }
 
         private void OnDisable()
         {
-            InventoryItem.onSelected -= CaptureCurrentSelectedItem;
+            InventoryItem.onSelected -= CaptureSelectedItem;
         }
 
         public async void LoadItems(string playerAddress, string contractAddress, ChainList contractChain)
@@ -140,7 +140,7 @@ namespace NFT_PowerUp
 
         public void DeleteCurrentSelectedItem()
         {
-            Destroy(_currentSelectedItem);
+            Destroy(_currentSelectedItem.gameObject);
             _currentItemsCount--;
         }
 
@@ -154,7 +154,7 @@ namespace NFT_PowerUp
             _currentItemsCount = 0;
         }
 
-        private void CaptureCurrentSelectedItem(InventoryItem selectedItem)
+        private void CaptureSelectedItem(InventoryItem selectedItem)
         {
             _currentSelectedItem = selectedItem;
         }

@@ -10,6 +10,8 @@ namespace NFT_PowerUp
 {
     public class ConsumingPowerUp : State
     {
+        public Inventory inventory;
+        
         [Header("UI Elements")]
         [SerializeField] private TextMeshProUGUI statusText;
 
@@ -41,6 +43,9 @@ namespace NFT_PowerUp
 
             // We tell the GameManager what we minted the item successfully
             statusText.text = "Transaction completed!";
+            
+            // We delete the power up that we just consumed from the inventory :)
+            inventory.DeleteCurrentSelectedItem();
             
             // We go to "PoweredUp" state
             ChangeState("PoweredUp");
