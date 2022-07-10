@@ -81,7 +81,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.07800031}
+  m_AnchoredPosition: {x: 0, y: -0.072}
   m_SizeDelta: {x: 7.6287, y: 2.1277}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2489004376297428579
@@ -104,7 +104,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2870332930483265123, guid: 949d20fe290aecc4f9fbfe63cfc5abf9, type: 2}
+  - {fileID: -1239811055599508109, guid: 1165360c1970c0a47a6a353d71546eb0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,18 +146,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sample text
+  m_text: Wallet address
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 949d20fe290aecc4f9fbfe63cfc5abf9, type: 2}
-  m_sharedMaterial: {fileID: -2870332930483265123, guid: 949d20fe290aecc4f9fbfe63cfc5abf9,
+  m_fontAsset: {fileID: 11400000, guid: 1165360c1970c0a47a6a353d71546eb0, type: 2}
+  m_sharedMaterial: {fileID: -1239811055599508109, guid: 1165360c1970c0a47a6a353d71546eb0,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 678418943
-  m_fontColor: {r: 1, g: 0.8509804, b: 0.43529412, a: 0.15686275}
+    rgba: 4282793296
+  m_fontColor: {r: 0.3137255, g: 0.2392157, b: 0.27450982, a: 0.6666667}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

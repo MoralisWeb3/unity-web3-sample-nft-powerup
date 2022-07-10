@@ -100,11 +100,13 @@ namespace NFT_PowerUp
 
         public void StartGame()
         {
+            player.walletAddress.Activate();
             ChangeState("Exploring");
         }
         
         public void GoToAuthenticating()
         {
+            player.walletAddress.Deactivate();
             ChangeState("Authenticating");
         }
 

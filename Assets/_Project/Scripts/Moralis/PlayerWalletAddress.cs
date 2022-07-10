@@ -15,13 +15,13 @@ namespace NFT_PowerUp
                 Quaternion.LookRotation(textMeshPro.transform.position - Camera.main.transform.position);
         }
 
-        public void Enable()
+        public void Activate()
         {
             GetWalletAddress();
             textMeshPro.gameObject.SetActive(true);
         }
 
-        public void Disable()
+        public void Deactivate()
         {
             textMeshPro.text = string.Empty;
             textMeshPro.gameObject.SetActive(false);

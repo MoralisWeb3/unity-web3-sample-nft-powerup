@@ -6652,21 +6652,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.x
-      value: 2.270603
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.y
-      value: 2.0803952
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695699321176519284, guid: df5aa7e09789aa14eb91a1d216ad581c,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df5aa7e09789aa14eb91a1d216ad581c, type: 3}
 --- !u!4 &1841023764 stripped
