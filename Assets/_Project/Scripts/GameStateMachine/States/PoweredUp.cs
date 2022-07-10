@@ -9,6 +9,7 @@ namespace NFT_PowerUp
     public class PoweredUp : State
     {
         public Player player;
+        public Timer timer;
         public List<ScriptableRendererFeature> rendererFeatures;
 
         private GameManager _gameManager;
@@ -32,6 +33,7 @@ namespace NFT_PowerUp
             _audioSource.Play();
             
             player.ActivatePowerUp(_gameManager.currentPowerUp.boostPercentage);
+            timer.Init(_gameManager.currentPowerUp.boostDuration);
             player.movement.onMaxFallingTimeReached += GoToExploring;
         }
 
