@@ -47,6 +47,7 @@ namespace NFT_PowerUp
             _audioSource.Stop();
             
             player.DeactivatePowerUp();
+            timer.ResetTimer();
             player.movement.onMaxFallingTimeReached -= GoToExploring;
         }
 

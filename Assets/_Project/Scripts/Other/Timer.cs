@@ -5,25 +5,30 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timeLabel;
 
-    private float _timerDuration;
+    private float _timer;
     
     private void Update()
     {
-        if (_timerDuration > 0)
+        if (_timer > 0)
         {
-            _timerDuration -= Time.deltaTime;
-            UpdateTimerDisplay(_timerDuration);
+            _timer -= Time.deltaTime;
+            UpdateTimerDisplay(_timer);
         }
         else
         {
-            _timerDuration = 0;
-            timeLabel.text = "00:00";
+            ResetTimer();
         }
     }
 
     public void Init(float duration)
     {
-        _timerDuration = duration;
+        _timer = duration;
+    }
+
+    public void ResetTimer()
+    {
+        _timer = 0;
+        timeLabel.text = "00:00";
     }
 
     private void UpdateTimerDisplay(float time)
