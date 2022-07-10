@@ -10,10 +10,8 @@ namespace NFT_PowerUp
     public class Menu : State
     {
         [Header("Components")]
-        [SerializeField] private AuthenticationKit authenticationKit;
-
-        [Header("UI")] 
         [SerializeField] private Inventory inventory;
+        [SerializeField] private AuthenticationKit authenticationKit;
 
         private GameManager _gameManager;
         private GameInput _gameInput;

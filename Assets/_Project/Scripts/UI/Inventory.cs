@@ -35,7 +35,7 @@ namespace NFT_PowerUp
         [SerializeField] private TextMeshProUGUI titleLabel;
         [SerializeField] private string titleText;
         [SerializeField] private InventoryItem itemPrefab;
-        [SerializeField] private GridLayoutGroup itemsGrid;
+        [SerializeField] private Transform content;
 
         private InventoryItem _currentSelectedItem;
         private int _currentItemsCount;
@@ -117,7 +117,7 @@ namespace NFT_PowerUp
     
         private void PopulatePlayerItem(string tokenId, MetadataObject metadataObject)
         {
-            InventoryItem newItem = Instantiate(itemPrefab, itemsGrid.transform);
+            InventoryItem newItem = Instantiate(itemPrefab, content);
             
             newItem.Init(tokenId, metadataObject);
 
@@ -126,7 +126,7 @@ namespace NFT_PowerUp
 
         public void DeleteItem(string id)
         {
-            foreach (Transform item in itemsGrid.transform)
+            foreach (Transform item in content)
             {
                 InventoryItem itemClass = item.GetComponent<InventoryItem>(); // Assuming every item has InventoryItem script
 
@@ -146,7 +146,7 @@ namespace NFT_PowerUp
 
         private void ClearAllItems()
         {
-            foreach (Transform item in itemsGrid.transform)
+            foreach (Transform item in content)
             {
                 Destroy(item.gameObject);
             }

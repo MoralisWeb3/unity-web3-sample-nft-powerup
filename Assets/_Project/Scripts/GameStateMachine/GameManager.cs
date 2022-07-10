@@ -80,6 +80,7 @@ namespace NFT_PowerUp
                     break;
                 
                 case "PoweredUp":
+                    Debug.Log("Heya");
                     // We can set currentPowerUp to null because we just consumed it
                     currentPowerUp = null;
                     break;
