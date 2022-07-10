@@ -11,8 +11,12 @@ namespace NFT_PowerUp
         
         [Header("Main Components")]
         public Player player;
-        public Inventory inventory;
-        
+
+        [Header("Audio")]
+        public AudioSource audioSource;
+        public AudioClip powerUpClip;
+        public AudioClip powerDownClip;
+
         [HideInInspector] public InventoryItem currentPowerUp;
 
         
@@ -59,6 +63,9 @@ namespace NFT_PowerUp
                 
                 case "PoweredUp":
                     player.input.EnableInput(true);
+
+                    audioSource.clip = powerUpClip;
+                    audioSource.Play();
                     break;
             }
         }
@@ -80,9 +87,8 @@ namespace NFT_PowerUp
                     break;
                 
                 case "PoweredUp":
-                    Debug.Log("Heya");
-                    // We can set currentPowerUp to null because we just consumed it
-                    currentPowerUp = null;
+                    audioSource.clip = powerDownClip;
+                    audioSource.Play();
                     break;
             }
         }

@@ -28,15 +28,15 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         _timer = 0;
-        timeLabel.text = "00:00";
+        timeLabel.text = "0";
     }
 
     private void UpdateTimerDisplay(float time)
     {
-        float minutes = Mathf.FloorToInt(time / 60);
+        //float minutes = Mathf.FloorToInt(time / 60);
         float seconds = Mathf.FloorToInt(time % 60);
 
-        string currentTime = $"{minutes:00}{seconds:00}";
+        string currentTime = $"{seconds:00}";
         timeLabel.text = currentTime;
     }
 }
