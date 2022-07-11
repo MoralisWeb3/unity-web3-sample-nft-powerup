@@ -10,8 +10,8 @@ We will consume an already minted NFT and use its attributes to power up our 3D 
 1. Download this repo (as zip or git)
 2. Download [Unity](https://unity3d.com/unity/qa/lts-releases?version=2021.3)
 3. Open this repo in Unity
-4. [Having MetaMask installed both on your browser and your mobile device, with the Mumbai Testnet imported and some funds in both](https://moralis.io/mumbai-testnet-faucet-how-to-get-free-testnet-matic-tokens/)
-5. Follow the [video tutorial](https://youtu.be/Yrx-tu704Ys)
+4. [Import Mumbai Testnet to your MetaMask wallets](https://moralis.io/mumbai-testnet-faucet-how-to-get-free-testnet-matic-tokens/)
+5. Follow the [video tutorial](https://youtu.be/OQrEqICa6mw)
 
 See [docs.moralis.io/unity](https://docs.moralis.io/unity) for more info.
 
@@ -21,7 +21,7 @@ See [docs.moralis.io/unity](https://docs.moralis.io/unity) for more info.
 * `Render Pipeline` - [Universal Render Pipeline (URP)](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@13.1/manual/index.html)
 
 **Scenes**
-* `Assets/_Project/Scenes/Game.unity` - Open scene and press 'Play'!
+* `Assets/_Project/Scenes/Game.unity`
 
 **Dependencies**
 * [`Moralis Web3 Unity SDK`](https://github.com/MoralisWeb3/unity-web3-game-kit/releases/tag/v1.2.1)
