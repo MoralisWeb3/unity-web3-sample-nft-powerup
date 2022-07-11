@@ -1,1 +1,1 @@
-# unity-web3-sample-nft-powerups
+# unity-web3-sample-nft-powerup
