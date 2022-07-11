@@ -24,7 +24,7 @@ See [docs.moralis.io/unity](https://docs.moralis.io/unity) for more info.
 * `Assets/_Project/Scenes/Game.unity`
 
 **Dependencies**
-* [`Moralis Web3 Unity SDK`](https://github.com/MoralisWeb3/unity-web3-game-kit/releases/tag/v1.2.1)
+* [`Moralis Web3 Unity SDK`](https://github.com/MoralisWeb3/web3-unity-sdk)
 
 ----
 
