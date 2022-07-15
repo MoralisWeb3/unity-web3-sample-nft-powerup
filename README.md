@@ -44,3 +44,28 @@ See [docs.moralis.io/unity](https://docs.moralis.io/unity) for more info.
 
 * Contact us in the Moralis Forum. 
 * See [forum.moralis.io/unity](https://forum.moralis.io/unity) for more info.
+
+----
+
+# Free Third Party Assets Used
+Give the creators some love ❤️
+
+## Unity Asset Store
+
+* [Surge](https://assetstore.unity.com/packages/tools/utilities/surge-107312)
+* [Desert Kits 64 Sample](https://assetstore.unity.com/packages/3d/environments/landscapes/desert-kits-64-sample-86482)
+* [GUI Parts](https://assetstore.unity.com/packages/2d/gui/icons/gui-parts-159068)
+* [Egyptian Tomb: Cat Statue](https://assetstore.unity.com/packages/3d/environments/historic/egyptian-tomb-cat-statue-119784)
+* [Translucent Crystals](https://assetstore.unity.com/packages/3d/environments/fantasy/translucent-crystals-106274)
+* [WorldSkies Free Skybox Pack](https://assetstore.unity.com/packages/2d/textures-materials/sky/worldskies-free-skybox-pack-86517)
+
+## Cool VFX Tutorials
+
+* [CHARACTER EFFECTS in Unity VFX Graph](https://www.youtube.com/watch?v=ePbeaYuMNK4&t=1s)
+* [Unity Shader Graph - Fullscreen Effects Tutorial](https://www.youtube.com/watch?v=mCpRxFP2J1c)
+
+## Audio
+
+* [Mario Invincible Theme](https://www.youtube.com/watch?v=0OZE4Ha1gFA)
+
+
