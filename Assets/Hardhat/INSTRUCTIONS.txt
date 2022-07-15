@@ -7,19 +7,18 @@
 
 // 2. INSTALL DEPENDENCIES
 
+    npm i -D --save-dev "hardhat@^2.10.0" "@nomicfoundation/hardhat-toolbox@^1.0.1"
     npm i -D @openzeppelin/contracts
-    npm i -D @nomiclabs/hardhat-waffle
+    npm i -D @nomicfoundation/hardhat-chai-matchers
     npm i -D @nomiclabs/hardhat-etherscan
 
-// 3. UNDER "contracts/", RENAME "Greeter.sol" TO YOUR DESIRED CONTRACT NAME
+// 3. UNDER "contracts/", RENAME "Lock.sol" TO YOUR DESIRED CONTRACT NAME
 
-// 4. UNDER "scripts/" RENAME "sample_script.js" to "deploy{YourContractName}.js" (WITHOUT {} of course)
+// 4. UNDER "scripts/", ON "deploy.sol" RENAME ALL THE "Lock" AND "lock" FIELDS WITH YOUR CONTRACT NAME. !! PRESERVE ORIGINAL CASE !!
 
-// 5. ON "deploy{YourContractName}.sol" RENAME ALL THE "Greeter" AND "greeter" FIELDS WITH YOUR CONTRACT NAME. !! PRESERVE ORIGINAL CASE !!
+// 5. MAKE SURE the "deploy()" function has the correct contract constructor parameters
 
-// 6. MAKE SURE the "deploy()" function has the correct contract constructor parameters
-
-// 7. UNDER "scripts/" MODIFY "deploy{YourContractName}.js" WITH YOUR NEEDS. FOR EXAMPLE, WE ADD ETHERSCAN VERIFICATION CODE JUST AFTER:
+// 6. MODIFY "deploy.js" WITH YOUR NEEDS. FOR EXAMPLE, WE ADD ETHERSCAN VERIFICATION CODE JUST AFTER the last console.log:
 
     await yourContractName.deployTransaction.wait(5);
     
@@ -29,17 +28,24 @@
         constructorArguments: [],
     });
 
-// 8. ON "hardhat.config.js" ADD THIS REQUIRE TO THE TOP:
+// 7. ON "hardhat.config.js" ADD THIS REQUIRE TO THE TOP:
 
     require("@nomiclabs/hardhat-etherscan");
         
-// 9. ON "hardhat.config.js" ADD THESE FIELDS BEFORE "module.exports" part:
+// 8. ON "hardhat.config.js" ADD THESE FIELDS BEFORE "module.exports" part:
 
-    const PRIVATE_KEY = "";
-    const MUMBAI_NETWORK_URL = "";
-    const POLYGONSCAN_API_KEY = "";
+    const PRIVATE_KEY = "";             // Populate from MetaMask, after sign-in
+    const MUMBAI_NETWORK_URL = "";      // Populate as described in UPDATE      
+    const POLYGONSCAN_API_KEY = "";     // Populate from polygonscan.com, after sign-in
 
-// 10. MODIFY "module.exports" in "hardat.config.js" WITH YOUR NEEDS, LIKE THIS:
+    UPDATE: Since the creation of this repo and related videos there has been a technical change.
+    Now, populate the MUMBAI_NETWORK_URL from the value you set up on
+    https://moralis.io/largenodes.
+    
+    For more information see
+    https://github.com/MoralisWeb3/changelog/blob/main/2022-07-11-speedy-node-removal.md
+
+// 9. MODIFY "module.exports" in "hardat.config.js" WITH YOUR NEEDS, LIKE THIS:
 
     module.exports = {
       solidity: "0.8.7",
@@ -54,14 +60,14 @@
       }
     };
 
-// 11. COMPILE SMART CONTRACT
+// 10. COMPILE SMART CONTRACT
 
     npx hardhat clean
     npx hardhat compile
 
-// 13. RUN "scripts/deploy{YourContractName}.js" TO DEPLOY SMART CONTRACT
+// 11. RUN "scripts/deploy.js" TO DEPLOY SMART CONTRACT
 
-    npx hardhat run scripts/deploy{YourContractName}.js --network mumbai
+    npx hardhat run scripts/deploy.js --network mumbai
 
 ************* CONTRACT DEPLOYED AND VERIFIED *************
 
